@@ -11,11 +11,12 @@ import TaskEditModal from "./TaskModal"
 import { formatDate, getStatusColor, getStatusText } from "@/lib/utils"
 
 export default function TaskList({ tasks }: { tasks: Promise<Task[]> }) {
-    let allTasks = use(tasks)
+    const allTasks = use(tasks)
     const [isEditModalOpen, setIsEditModalOpen] = useState(false)
     const [taskId, setTaskId] = useState<number | null>(null)
     const [modalMode, setModalMode] = useState<'view' | 'edit'>('view')
     const router = useRouter()
+    
     const TaskDelete = async (id: number) => {
         try {
             await deleteTask(id)
@@ -90,15 +91,6 @@ export default function TaskList({ tasks }: { tasks: Promise<Task[]> }) {
                     ))
                 )}
             </div>
-
-            {/* Task Counter */}
-            {/* {tasks?.length > 0 && (
-                <div className="text-center text-sm text-muted-foreground border-t border-border pt-4">
-                    <span className="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-xs font-medium">
-                        {tasks?.length} {tasks?.length === 1 ? "task" : "tasks"} total
-                    </span>
-                </div>
-            )} */}
 
             {isEditModalOpen && 
             <TaskEditModal 
