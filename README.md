@@ -37,6 +37,9 @@ This project is built using **Next.js** with **Tailwind CSS**, **Shadcn UI**, an
 - Sonner (Notifications)
 - Radix UI
 - Lucide React
+- Jest
+- Testing Library
+- TypeScript
 
 ---
 
@@ -69,13 +72,16 @@ php artisan serve
 cd frontend
 npm install
 npm run dev
+touch .env.local
+add the following to .env.local
+NEXT_PUBLIC_API_URL=http://localhost:8000
 ```
 
 ### Running tests (Backend)
 
 ```bash
 cd backend
-php artisan test
+php artisan test --filter=Unit
 ```
 
 ### Running tests (Frontend)

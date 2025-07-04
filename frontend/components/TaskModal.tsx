@@ -102,7 +102,7 @@ export default function TaskEditModal({ taskId, isOpen, onClose, mode }: TaskEdi
                                 <FormItem>
                                     <FormLabel>Due Date</FormLabel>
                                     <FormControl>
-                                        <Input type="date" {...field} disabled={mode === "view"} />
+                                        <Input type="datetime-local" {...field} disabled={mode === "view"} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>

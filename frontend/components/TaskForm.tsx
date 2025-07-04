@@ -88,7 +88,7 @@ export default function TaskForm() {
                                     <div className="relative">
                                         <FormControl>
                                             <Input
-                                                type="date"
+                                                type="datetime-local"
                                                 placeholder="Add a new due date..."
                                                 {...field}
                                                 id={field.name}

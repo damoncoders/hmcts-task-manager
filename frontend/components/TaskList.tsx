@@ -8,7 +8,7 @@ import { deleteTask } from "@/lib/task"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import TaskEditModal from "./TaskModal"
-import { getStatusColor, getStatusText } from "@/lib/utils"
+import { formatDate, getStatusColor, getStatusText } from "@/lib/utils"
 
 export default function TaskList({ tasks }: { tasks: Promise<Task[]> }) {
     let allTasks = use(tasks)
@@ -58,7 +58,7 @@ export default function TaskList({ tasks }: { tasks: Promise<Task[]> }) {
                         >
                             <div className="flex flex-col gap-2 w-full">
                                 <span className="text-sm font-medium flex-1">Title: {task.title}</span>
-                                <span className="text-sm font-medium flex-1">Due Date: {task.due_date}</span>
+                                <span className="text-sm font-medium flex-1">Due Date: {formatDate(task.due_date)}</span>
                                 {task.description && <span className="text-sm font-medium flex-1">Description: {task.description}</span>}
                                 <span className={`text-sm font-medium flex-1 ${getStatusColor(task.status)}`}>Status: {getStatusText(task.status)}</span>
                             </div>
