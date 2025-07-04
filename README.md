@@ -55,12 +55,6 @@ This project is built using **Next.js** with **Tailwind CSS**, **Shadcn UI**, an
 curl -X POST http://localhost:8000/api/tasks -H "Content-Type: application/json" -d '{"title": "Test Task", "description": "This is a test task", "status": "pending", "due_date": "2024-12-31T00:00:00.000000Z"}'
 ```
 
-**List all tasks**
-
-```bash
-curl -X GET http://localhost:8000/api/tasks
-```
-
 - `POST /api/tasks` – create a task
 
 **Sample request body:**
@@ -88,10 +82,10 @@ curl -X GET http://localhost:8000/api/tasks
 }
 ```
 
-**Get a single task**
+**List all tasks**
 
 ```bash
-curl -X GET http://localhost:8000/api/tasks/1
+curl -X GET http://localhost:8000/api/tasks
 ```
 
 - `GET /api/tasks` – list all tasks
@@ -112,7 +106,7 @@ curl -X GET http://localhost:8000/api/tasks/1
 }
 ```
 
-**Update a task**
+**Get a single task**
 
 ```bash
 curl -X PUT http://localhost:8000/api/tasks/1 -H "Content-Type: application/json" -d '{"title": "Updated Task", "description": "This is an updated task", "status": "in_progress", "due_date": "2024-12-31T00:00:00.000000Z"}'
@@ -132,6 +126,12 @@ curl -X PUT http://localhost:8000/api/tasks/1 -H "Content-Type: application/json
     "due_date": "2024-12-31T00:00:00.000000Z"
   }
 }
+```
+
+**Update a task**
+
+```bash
+curl -X PUT http://localhost:8000/api/tasks/1 -H "Content-Type: application/json" -d '{"title": "Updated Task", "description": "This is an updated task", "status": "in_progress", "due_date": "2024-12-31T00:00:00.000000Z"}'
 ```
 
 - `PUT /api/tasks/{id}` – update a task
