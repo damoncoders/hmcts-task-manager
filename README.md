@@ -70,8 +70,8 @@ php artisan serve
 
 ```bash
 cd frontend
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 touch .env.local
 add the following to .env.local
 NEXT_PUBLIC_API_URL=http://localhost:8000
@@ -88,5 +88,5 @@ php artisan test --filter=Unit
 
 ```bash
 cd frontend
-npm run test
+pnpm run test
 ```
