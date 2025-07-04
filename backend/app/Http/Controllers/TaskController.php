@@ -31,17 +31,12 @@ class TaskController extends Controller
      */
     public function store(TaskRequest $request)
     {
-        $title = $request->title;
-        $description = $request->description;
-        $status = $request->status;
-        $due_date = $request->due_date;
-
-        $task = Task::create([
-            'title' => $title,
-            'description' => $description,
-            'status' => $status,
-            'due_date' => $due_date,
-        ]);
+        $task = Task::create($request->only([
+            'title',
+            'description',
+            'status',
+            'due_date',
+        ]));
 
         return new TaskResource($task);
     }
@@ -67,17 +62,7 @@ class TaskController extends Controller
      */
     public function update(TaskRequest $request, Task $task)
     {
-        $title = $request->title;
-        $description = $request->description;
-        $status = $request->status;
-        $due_date = $request->due_date;
-
-        $task->update([
-            'title' => $title,
-            'description' => $description,
-            'status' => $status,
-            'due_date' => $due_date,
-        ]);
+        $task->update($request->only(['title', 'description', 'status', 'due_date']));
 
         return new TaskResource($task);
     }

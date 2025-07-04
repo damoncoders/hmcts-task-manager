@@ -29,6 +29,9 @@ This project is built using **Next.js** with **Tailwind CSS**, **Shadcn UI**, an
 - Sonner (Notifications)
 - Radix UI
 - Lucide React
+- Jest
+- Testing Library
+- TypeScript
 
 ---
 
@@ -48,13 +51,16 @@ This project is built using **Next.js** with **Tailwind CSS**, **Shadcn UI**, an
 
 ```bash
 cd frontend
-npm install
-npm run dev
+pnpm install
+pnpm run dev
+touch .env.local
+add the following to .env.local
+NEXT_PUBLIC_API_URL=http://localhost:8000
 ```
 
 ### Running tests (Frontend)
 
 ```bash
 cd frontend
-npm run test
+pnpm run test
 ```
