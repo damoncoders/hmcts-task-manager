@@ -64,7 +64,6 @@ This project is built using **Next.js** with **Tailwind CSS**, **Shadcn UI**, an
 
 ```json
 {
-  "message": "Task created successfully",
   "data": {
     "id": 1,
     "title": "Test Task",
@@ -81,7 +80,6 @@ This project is built using **Next.js** with **Tailwind CSS**, **Shadcn UI**, an
 
 ```json
 {
-  "message": "Tasks fetched successfully",
   "data": [
     {
       "id": 1,
@@ -100,7 +98,6 @@ This project is built using **Next.js** with **Tailwind CSS**, **Shadcn UI**, an
 
 ```json
 {
-  "message": "Task fetched successfully",
   "data": {
     "id": 1,
     "title": "Test Task",
@@ -130,7 +127,7 @@ This project is built using **Next.js** with **Tailwind CSS**, **Shadcn UI**, an
 
 ```json
 {
-  "message": "Task deleted successfully"
+  "data": null
 }
 ```
 
