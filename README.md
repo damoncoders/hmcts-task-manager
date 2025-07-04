@@ -4,6 +4,8 @@ A simple task management system built for the HMCTS developer challenge. It allo
 
 This project is built using **Next.js** with **Tailwind CSS**, **Shadcn UI**, and **React Hook Form** for the frontend, and **Laravel API** with **PostgreSQL** for the backend.
 
+![Screenshot](https://cdn.fortiplacecdn.com/task.png)
+
 ---
 
 ## 🔧 Features
@@ -46,10 +48,91 @@ This project is built using **Next.js** with **Tailwind CSS**, **Shadcn UI**, an
 ## 🧪 API Endpoints
 
 - `POST /api/tasks` – create a task
+
+**Sample request body:**
+
+```json
+{
+  "title": "Test Task",
+  "description": "This is a test task",
+  "status": "pending",
+  "due_date": "2024-12-31T00:00:00.000000Z"
+}
+```
+
+**Sample response:**
+
+```json
+{
+  "message": "Task created successfully",
+  "data": {
+    "id": 1,
+    "title": "Test Task",
+    "description": "This is a test task",
+    "status": "pending",
+    "due_date": "2024-12-31T00:00:00.000000Z"
+  }
+}
+```
+
 - `GET /api/tasks` – list all tasks
+
+**Sample response:**
+
+```json
+{
+  "message": "Tasks fetched successfully",
+  "data": [
+    {
+      "id": 1,
+      "title": "Test Task",
+      "description": "This is a test task",
+      "status": "pending",
+      "due_date": "2024-12-31T00:00:00.000000Z"
+    }
+  ]
+}
+```
+
 - `GET /api/tasks/{id}` – get a single task
+
+**Sample response:**
+
+```json
+{
+  "message": "Task fetched successfully",
+  "data": {
+    "id": 1,
+    "title": "Test Task",
+    "description": "This is a test task",
+    "status": "pending",
+    "due_date": "2024-12-31T00:00:00.000000Z"
+  }
+}
+```
+
 - `PUT /api/tasks/{id}` – update a task
+
+**Sample request body:**
+
+```json
+{
+  "title": "Updated Task",
+  "description": "This is an updated task",
+  "status": "in_progress",
+  "due_date": "2024-12-31T00:00:00.000000Z"
+}
+```
+
 - `DELETE /api/tasks/{id}` – delete a task
+
+**Sample response:**
+
+```json
+{
+  "message": "Task deleted successfully"
+}
+```
 
 ---
 
